@@ -1,0 +1,33 @@
+<style type="text/css">
+.cards {
+    width: auto;
+    height: auto;
+    box-shadow: 0px 0px 2px #888888;
+    padding: 4%;
+}
+</style>
+<div ng-controller="additemController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <form class="form form-horizontal cards">
+                    <div class="form-group">
+                        <label for="item" class="col-sm-4 control-label">Menu Item Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="item" placeholder="Item Name" ng-model="item.item_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemprice" class="col-sm-4 control-label">Item Price</label>
+                        <div class="col-sm-8">
+                            <input type="number" min="0" class="form-control" id="itemprice" placeholder="Item Price" ng-model="item.item_price">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="col-sm-3 col-sm-offset-5 btn btn-primary" ng-click="additemdetails()">Add Item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

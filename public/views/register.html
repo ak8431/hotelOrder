@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="thumbnail" style="padding: 10%;">
+        <div class="row" ng-controller="registerController">
+            <form class="form-horizontal card" ng-submit="register()">
+                <div class="col-sm-5 col-sm-offset-4">
+                    <div class="form-group">
+                        <label for="hotel"> Hotel Name <span style="color:red;">* </span></label>
+                        <input type="text" id="hotel" class="form-control" ng-model="hotel.name" placeholder="Enter Your Hotel Name" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"> Phone <span style="color:red;">* </span> </label>
+                        <input type="text" pattern="[0-9]{10}" id="phone" class="form-control" ng-model="hotel.phone_no" placeholder="Enter Your Mobile Number" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Email Id <span style="color:red;">* </span> </label>
+                        <input type="email" id="email" class="form-control" ng-model="hotel.email_id" placeholder="Enter Your Email Id" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"> Password <span style="color:red;">* </span> </label>
+                        <input type="password" id="phone" class="form-control" ng-model="hotel.password" placeholder="Enter Your Mobile Number" required="required">
+                    </div>
+                    <div class="row" style="text-align: center;color:red;">{{api}}</div><br>
+                    <div class="form-group">
+                        <a href="/login" class="btn btn-default pull-left">Back</a>
+                        <a ng-click="register()" class="btn btn-primary col-sm-4 col-sm-offset-5">Register</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

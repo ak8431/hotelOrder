@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>Hotel Order</title>
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.min.js"></script> -->
+
+	<script src="controller/app.js"></script>
+
+	<style type="text/css">
+		.cards{
+			width: auto;
+			height: auto;
+			box-shadow: 2px 2px 2px #888888;
+			padding: 4%;
+		}
+	</style>
+</head>
+<body ng-controller="additemController">
+
+<div class="container-fluid">
+	<nav class="row">
+	  <div class="navbar navbar-default">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">{{user.hotel_name}}</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#">Hello {{user.name}}</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<form  class="form form-horizontal cards">
+			<div class="form-group">
+			  <label for="hotelname" class="col-sm-4 control-label">Hotel Name</label>
+			  <div class="col-sm-8">
+			    <input type="text" class="form-control" id="hotelname" placeholder="Hotel Name">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="item" class="col-sm-4 control-label">Item Name</label>
+			  <div class="col-sm-8">
+			    <input type="text" class="form-control" id="item" placeholder="Item Name">
+			  </div>
+			</div>
+			<div class="form-group">
+			  <label for="itemprice" class="col-sm-4 control-label">Item Price</label>
+			  <div class="col-sm-8">
+			    <input type="number" min="0" class="form-control" id="itemprice" placeholder="Item Price">
+			  </div>
+			</div>
+			<div class="row">
+				<button class="col-sm-3 col-sm-offset-5 btn btn-primary" ng-click="additemdetails()">Add Item</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+
+</div>
+<!-- {{msg}} -->
+
+
+
+
+
+<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-fixed-bottom" style="padding-top:1%;">
+	  <div class="col-sm-12">
+	    Copyright &copy;2017
+	  </div>
+	</nav>
+</div>
+
+<script type="text/javascript">
+	var app=angular.module('myapp',[]);
+	// app.config($routeProvider,$locationprovider
+	// 	.when()
+	// );
+
+	app.controller('additemController',function($scope){
+		$scope.msg="Hello";
+		$scope.user={
+				name : "Amit Kumar",
+				hotel_name : "Rocker's Club"
+			};
+
+			$scope.additemdetails=function(){
+				window.location.assign("index.html")
+			}
+	});
+</script>
+
+
+</body>
+</html>

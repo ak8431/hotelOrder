@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="col-sm-12">
+        <div class="col-sm-6">
+            <h3>Using ng-repeat to iterate array data</h3>
+            <div ng-repeat="character in people">
+                <p>{{$index+1}}. {{character.name}} is a {{character.gender}} {{character.type}}</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <a href="/try3" class="btn btn-default pull-right" style="margin-top: 3%;">Cick here to go next page</a>
+            <a href="/try" class="btn btn-default pull-right" style="margin-top: 3%;">Cick here to go back</a>
+        </div>
+    </div>
+    <div class="col-sm-12" style="box-shadow: 0px 0px 3px grey;">
+        <div class="col-sm-6">
+            <h3>Using filters in ng-repeat</h3>
+            <div ng-repeat="character in people | filter: 'duck'">
+                <p>{{$index+1}}. {{character.name}} is a {{character.gender}} {{character.type}}</p>
+            </div>
+        </div>
+        <div class="col-sm-6" style="border-left: 1px solid grey;">
+            <h3> Using orderBy in ng-repeat</h3>
+            <div ng-repeat="character in people | orderBy: 'name'">
+                <p>{{$index+1}}. {{character.name}} is a {{character.gender}} {{character.type}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <h3>Combining all the above and using $index to filter & track value</h3>
+        <div ng-repeat="character in people | orderBy: 'name' | filter: 'd' track by $index">
+            <p>{{$index+1}}. {{character.name}} is a {{character.gender}} {{character.type}}</p>
+        </div>
+    </div>
+</div>

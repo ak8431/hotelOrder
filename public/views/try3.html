@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<div class="col-sm-12">
+		<h3>Using ng-repeat with select tag for dropdown <a href="/try2" class="btn btn-default col-sm-offset-5">Click to go back</a></h3>
+		<div class="form-group col-sm-4">
+			<select class="form-control" ng-options="character.name for character in people" ng-click="hello=false" ng-model="selected1"></select>
+		</div>
+		<div class="form-group col-sm-4">
+			<select class="form-control" ng-options="character.type for character in people " ng-model="selected2"></select>
+		</div>
+		<div class="form-group col-sm-4">
+			<select class="form-control" ng-options="character.gender for character in people" ng-model="selected3"></select>
+		</div>
+	</div>
+	<div class="col-sm-12" ng-init="hello=true" ng-hide="hello">
+		<p>{{selected1.name}} is a {{selected2.type}} {{selected3.gender}} </p>
+	</div><br><br>
+	<div class="col-sm-12">
+		<h3>Topping Search</h3>
+		<input type="text" class="form-control" ng-model="model.search">
+		<div ng-hide="model.search">
+		    Enter the search criteria above.
+		</div>
+		<div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search"">
+    		<span ng-click="addTopping(t)" style="cursor: pointer;">{{t}}</span>
+		</div>
+		<div class="alert alert-danger" ng-show="model.search.length > 0 && filteredToppings.length === 0" > No results.</div>
+		<div class="alert alert-success" ng-show="model.search.length > 0 && filteredToppings.length === 0" > Toppings Added. </div>
+		<h3>Selected Toppings</h3>
+		<div ng-repeat="t in model.toppings">
+		    {{t}}
+		</div> 
+	</div>
+</div>
